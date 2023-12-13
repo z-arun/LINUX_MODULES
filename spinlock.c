@@ -23,7 +23,7 @@ int mythread(void * ptr)
         pr_alert("In thread 1");
         while(!kthread_should_stop())
         {
-                spin_lock(&sl); // sleeping here
+                spin_lock(&sl); // spinning here
                 //spin_try_lock(&mu);
                 x++;
                 spinlock_status  = spin_is_locked(&sl);
